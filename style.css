@@ -1,70 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
+  background: linear-gradient(to bottom, #f0f0f0, #ccc);
   padding: 30px;
   max-width: 600px;
   margin: auto;
-  color: #333;
 }
 
+/* Title */
 p {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center;
 }
 
+/* Input Grid */
 .todo-input-grid {
   display: grid;
-  grid-template-columns: 2fr 1.5fr auto;
+  grid-template-columns: 1.5fr 1.2fr auto;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
-.todo-input-grid input,
-.todo-input-grid button {
+/* Input Styles */
+.todo-input-grid input {
   padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
+  font-size: 15px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background-color: #eee;
+  color: #222;
 }
 
+/* Add Button */
 .todo-input-grid button {
-  background-color: #007bff;
+  background-color: #117a00; /* green */
   color: white;
+  font-weight: bold;
   border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: 0.2s ease-in-out;
 }
 
 .todo-input-grid button:hover {
-  background-color: #0056b3;
+  background-color: #0c5f00;
 }
 
-.todo-grid {
+/* Todo List Grid */
+.js-todo-list > .todo-grid {
   display: grid;
-  grid-template-columns: 2fr 1.5fr auto;
+  grid-template-columns: 1.5fr 1.2fr auto;
   gap: 10px;
   align-items: center;
   margin-bottom: 10px;
 }
 
+/* Task Text */
 .todo-grid div {
-  padding: 10px;
-  background: #ffffff;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  font-size: 16px;
+  color: #111;
 }
 
+/* Delete Button */
 .todo-grid button {
-  padding: 8px 12px;
-  background-color: #dc3545;
+  background-color: #a30000; /* deep red */
   color: white;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 10px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: 0.2s ease-in-out;
 }
 
 .todo-grid button:hover {
-  background-color: #a71d2a;
+  background-color: #7c0000;
 }
