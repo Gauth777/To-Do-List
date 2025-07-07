@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  padding: 30px;
+  max-width: 600px;
+  margin: auto;
+  color: #333;
+}
+
+p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.todo-input-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr auto;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input-grid input,
+.todo-input-grid button {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.todo-input-grid button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.todo-input-grid button:hover {
+  background-color: #0056b3;
+}
+
+.todo-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr auto;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todo-grid div {
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.todo-grid button {
+  padding: 8px 12px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.todo-grid button:hover {
+  background-color: #a71d2a;
+}
