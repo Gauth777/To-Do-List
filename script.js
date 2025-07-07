@@ -1,54 +1,55 @@
-const todoList = [{
-  name:'make dinner',
-  dueDate: '2025-07-07'
-}, {
-  name:'wash dishes',
-dueDate:'2025-07-07'
-}];
+let todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
 function renderTodoList() {
-    let todoListHTML = '';
+  let todoListHTML = '';
 
-    for (let i = 0; i < todoList.length; i++) {
+  for (let i = 0; i < todoList.length; i++) {
     const { name, dueDate } = todoList[i];
-      //const name=todoObject.name;
-      //const dueDate: todoObject.dueDate;
-      const html = `
-        <div class="todo-grid">
-          <div>${name}</div>
-          <div>${dueDate}</div>
-          <button onclick="
-            todoList.splice(${i}, 1);
-            renderTodoList();
-          ">Delete</button>
-        </div>
-      `;
+    const html = `
+      <div>${name}</div>
+      <div>${dueDate}</div>
+      <button onclick="
+        deleteTodo(${i});
+      ">Delete</button>
+    `;
 
-      todoListHTML += html;
-    }
+    todoListHTML += `<div class="todo-grid">${html}</div>`;
+  }
 
+  document.querySelector('.js-todo-list').innerHTML = todoListHTML;
+}
 
-    document.querySelector('.js-todo-list')
-    .innerHTML = todoListHTML;
-    }
+// Delete logic extracted out for reusability
+function deleteTodo(index) {
+  todoList.splice(index, 1);
+  saveToLocalStorage();
+  renderTodoList();
+}
 
-
-    function addTodo() {
+function addTodo() {
   const inputElement = document.querySelector('.js-name-input');
-  const name = inputElement.value.trim(); // trimming spaces
+  const name = inputElement.value.trim();
 
   const dateInputElement = document.querySelector('.js-due-date-input');
   const dueDate = dateInputElement.value;
 
   if (name === '' || dueDate === '') {
     alert("Please fill both fields before adding!");
-    return; // 🛑 Stop here
+    return;
   }
 
   todoList.push({ name, dueDate });
 
   inputElement.value = '';
-  dateInputElement.value = ''; // optional: reset date input too
+  dateInputElement.value = '';
 
+  saveToLocalStorage();
   renderTodoList();
 }
+
+function saveToLocalStorage() {
+  localStorage.setItem('todoList', JSON.stringify(todoList));
+}
+
+// Initial render on page load
+renderTodoList();
