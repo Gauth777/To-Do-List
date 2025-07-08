@@ -6,11 +6,14 @@ function renderTodoList() {
   for (let i = 0; i < todoList.length; i++) {
     const { name, dueDate } = todoList[i];
     const html = `
-      <div>${name}</div>
-      <div>${dueDate}</div>
-      <button class="delete-button" onclick="
-        deleteTodo(${i});
-      ">❌ Delete</button>
+      <div class="todo-item">
+        <div class="todo-text">${name}</div>
+        <div class="todo-date">${dueDate}</div>
+        <button class="delete-button" onclick="
+          todoList.splice(${i}, 1);
+          renderTodoList();
+        ">❌ Delete</button>
+      </div>
     `;
 
     todoListHTML += `<div class="todo-grid">${html}</div>`;
