@@ -8,9 +8,9 @@ function renderTodoList() {
     const html = `
       <div>${name}</div>
       <div>${dueDate}</div>
-      <button onclick="
+      <button class="delete-button" onclick="
         deleteTodo(${i});
-      ">Delete</button>
+      ">❌ Delete</button>
     `;
 
     todoListHTML += `<div class="todo-grid">${html}</div>`;
@@ -53,3 +53,25 @@ function saveToLocalStorage() {
 
 // Initial render on page load
 renderTodoList();
+
+const calendarInput = document.querySelector('.js-calendar-picker');
+const dateTasksContainer = document.querySelector('.js-date-tasks');
+
+// Listen for date selection
+calendarInput.addEventListener('change', () => {
+  const selectedDate = calendarInput.value;
+  const filteredTasks = todoList.filter(task => task.dueDate === selectedDate);
+
+  if (filteredTasks.length === 0) {
+    dateTasksContainer.innerHTML = `<p>No tasks on this date.</p>`;
+    return;
+  }
+
+  let html = `<ul>`;
+  filteredTasks.forEach(task => {
+    html += `<li>${task.name}</li>`;
+  });
+  html += `</ul>`;
+
+  dateTasksContainer.innerHTML = html;
+});

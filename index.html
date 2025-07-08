@@ -11,14 +11,21 @@
       class="js-name-input">
       <input type="date"
       class = "js-due-date-input">
-      <button onclick="
+      <button class="add-button" onclick="
       addTodo();
-      ">Add</button>
+      ">➕ Add Quest</button>
 
   </div>
 
     <div class = "js-todo-list todo-grid">
      </div>
+
+     <div class="calendar-container">
+  <h3>📆 View Tasks by Date</h3>
+  <input type="date" class="js-calendar-picker">
+  <div class="js-date-tasks"></div>
+</div>
+
 
   <script src="script.js" ></script>
 </body>

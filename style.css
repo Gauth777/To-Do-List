@@ -1,86 +1,90 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans&display=swap');
 
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #f0f0f0, #ccc);
-  padding: 30px;
-  max-width: 600px;
+  font-family: 'Pixelify Sans', sans-serif;
+  background: linear-gradient(to bottom, #1b1f24, #2d333b);
+  color: #fff;
+  padding: 40px;
+  max-width: 800px;
   margin: auto;
-}
-
-/* Title */
-p {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
   text-align: center;
 }
 
-/* Input Grid */
+h1, h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  color: #ffe066;
+  margin-bottom: 20px;
+}
+
 .todo-input-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1.2fr auto;
-  gap: 10px;
-  margin-bottom: 25px;
-}
-
-/* Input Styles */
-.todo-input-grid input {
-  padding: 10px;
-  font-size: 15px;
-  border: 1px solid #999;
-  border-radius: 4px;
-  background-color: #eee;
-  color: #222;
-}
-
-/* Add Button */
-.todo-input-grid button {
-  background-color: #117a00; /* green */
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 16px;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-}
-
-.todo-input-grid button:hover {
-  background-color: #0c5f00;
-}
-
-/* Todo List Grid */
-.js-todo-list > .todo-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1.2fr auto;
-  gap: 10px;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 12px;
+  margin-bottom: 20px;
   align-items: center;
-  margin-bottom: 10px;
 }
 
-/* Task Text */
-.todo-grid div {
-  font-size: 16px;
-  color: #111;
+input {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3b3f46;
+  color: #fff;
+  outline: none;
 }
 
-/* Delete Button */
-.todo-grid button {
-  background-color: #a30000; /* deep red */
-  color: white;
+button {
+  padding: 10px 20px;
   font-weight: bold;
   border: none;
-  border-radius: 4px;
-  padding: 10px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: transform 0.2s ease;
 }
 
-.todo-grid button:hover {
-  background-color: #7c0000;
+button:hover {
+  transform: scale(1.05);
+}
+
+.add-button {
+  background-color: #00b894;
+  color: #000;
+}
+
+.delete-button {
+  background-color: #d63031;
+  color: #fff;
+}
+
+.todo-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #24292e;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #0005;
+}
+
+.todo-grid div {
+  text-align: left;
+}
+
+.calendar-container {
+  border-top: 2px dashed #555;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.js-calendar-picker {
+  background-color: #3b3f46;
+  border: 1px solid #777;
+  color: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
 }
