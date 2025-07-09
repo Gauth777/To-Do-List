@@ -1,5 +1,14 @@
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
+function resetTodoList() {
+  if (confirm('Are you sure you want to reset your quest log? ⚠️')) {
+    todoList.length = 0; // clear the array
+    localStorage.removeItem('todoList'); // remove from localStorage
+    renderTodoList(); // update UI
+  }
+}
+
+
 function renderTodoList() {
   let todoListHTML = '';
 
