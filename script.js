@@ -2,7 +2,7 @@ let todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
 function resetTodoList() {
   if (confirm('Are you sure you want to reset your quest log? ⚠️')) {
-    todoList.length = 0; // clear the array
+    todoList.length = 0; 
     localStorage.removeItem('todoList'); // remove from localStorage
     renderTodoList(); // update UI
   }
@@ -31,7 +31,6 @@ function renderTodoList() {
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 }
 
-// Delete logic extracted out for reusability
 function deleteTodo(index) {
   todoList.splice(index, 1);
   saveToLocalStorage();
@@ -63,13 +62,13 @@ function saveToLocalStorage() {
   localStorage.setItem('todoList', JSON.stringify(todoList));
 }
 
-// Initial render on page load
+
 renderTodoList();
 
 const calendarInput = document.querySelector('.js-calendar-picker');
 const dateTasksContainer = document.querySelector('.js-date-tasks');
 
-// Listen for date selection
+// Date selection heh
 calendarInput.addEventListener('change', () => {
   const selectedDate = calendarInput.value;
   const filteredTasks = todoList.filter(task => task.dueDate === selectedDate);
