@@ -2,12 +2,12 @@ let todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
 function resetTodoList() {
   if (confirm('Are you sure you want to reset your quest log? ⚠️')) {
-    todoList.length = 0; 
+    todoList.length = 0;
     localStorage.removeItem('todoList'); // remove from localStorage
     renderTodoList(); // update UI
   }
 }
-
+asGVSBsf
 
 function renderTodoList() {
   let todoListHTML = '';
